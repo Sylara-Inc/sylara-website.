@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sylara helps people build better habits, stay accountable, and turn consistent action into measurable progress.">
+  <title>Sylara | Build habits. Earn XP. Become your best self.</title>
+  <style>
+    :root {
+      --orange: #F1600D;
+      --accessible-orange: #B54200;
+      --white: #FFFFFF;
+      --black: #000000;
+      --grey: #C6C6C6;
+      --soft-white: rgba(255,255,255,.82);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--black);
+      background: var(--white);
+    }
+
+    a { color: inherit; }
+
+    .hero {
+      min-height: 88vh;
+      background: var(--orange);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 26px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      font-size: 25px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 34px;
+      height: auto;
+      display: block;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .navlinks a {
+      text-decoration: none;
+      opacity: .88;
+    }
+
+    .hero-inner {
+      width: min(900px, calc(100% - 40px));
+      margin: auto;
+      padding: 80px 0 110px;
+      text-align: center;
+    }
+
+    .hero-mark {
+      width: 88px;
+      margin: 0 auto 24px;
+      display: block;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(46px, 8vw, 84px);
+      line-height: .98;
+      letter-spacing: -0.055em;
+      font-weight: 700;
+    }
+
+    .tagline {
+      margin: 26px auto 0;
+      max-width: 670px;
+      font-size: clamp(21px, 3vw, 30px);
+      line-height: 1.32;
+      font-weight: 400;
+    }
+
+    .intro {
+      max-width: 690px;
+      margin: 22px auto 0;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--soft-white);
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 34px;
+      border: 1px solid rgba(255,255,255,.62);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 92px 20px;
+    }
+
+    .section-inner {
+      width: min(1050px, 100%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: var(--accessible-orange);
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      margin: 0;
+      max-width: 760px;
+    }
+
+    .lead {
+      margin-top: 22px;
+      max-width: 760px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #3a3a3a;
+    }
+
+    .features {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      border: 1px solid #e8e8e8;
+      border-radius: 18px;
+      padding: 30px;
+      min-height: 235px;
+      background: #fff;
+    }
+
+    .number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 14px 0 0;
+      line-height: 1.65;
+      color: #505050;
+    }
+
+    .about {
+      background: #f7f7f7;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .facts {
+      display: grid;
+      gap: 14px;
+    }
+
+    .fact {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 20px 22px;
+    }
+
+    .fact strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .status {
+      background: var(--orange);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .status h2 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .status p {
+      max-width: 680px;
+      margin: 20px auto 0;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--soft-white);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact p {
+      max-width: 620px;
+      margin: 18px auto 0;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .email {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 700;
+    }
+
+    footer {
+      border-top: 1px solid #e8e8e8;
+      padding: 28px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    @media (max-width: 760px) {
+      .navlinks { display: none; }
+      .features { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .hero { min-height: 82vh; }
+      section { padding: 70px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero" id="top">
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="Sylara home">
+        <img src="data:image/png;base64,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" alt="">
+        <span>SYLARA</span>
+      </a>
+
+      <div class="navlinks">
+        <a href="#product">Product</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero-inner">
+      <img class="hero-mark" src="data:image/png;base64,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" alt="Sylara logo">
+      <h1>Build habits.<br>Earn XP.</h1>
+      <p class="tagline">Become your best self.</p>
+      <p class="intro">
+        Sylara is a wellness platform designed to make personal growth engaging,
+        measurable and sustainable through habits, accountability and progress tracking.
+      </p>
+      <div class="badge">MVP currently in development</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="product">
+      <div class="section-inner">
+        <div class="eyebrow">What Sylara does</div>
+        <h2>Turn everyday actions into meaningful progress.</h2>
+        <p class="lead">
+          Sylara is being built to help people create structure around the goals that matter
+          to them, stay accountable to consistent action, and see their progress over time.
+        </p>
+
+        <div class="features">
+          <article class="card">
+            <div class="number">1</div>
+            <h3>Build habits</h3>
+            <p>
+              Create repeatable actions around the goals that matter most and make consistency
+              part of everyday life.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">2</div>
+            <h3>Stay accountable</h3>
+            <p>
+              Use structure, challenges and progress signals to maintain momentum and keep moving
+              toward the commitments you make to yourself.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">3</div>
+            <h3>See progress</h3>
+            <p>
+              Track milestones, earn XP and turn steady effort into a visible record of personal
+              growth.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="section-inner about-grid">
+        <div>
+          <div class="eyebrow">About Sylara</div>
+          <h2>A better way to stay engaged with personal growth.</h2>
+          <p class="lead">
+            Sylara Inc. is developing a consumer wellness platform focused on habit formation,
+            accountability and measurable progress. The product is currently in MVP development
+            ahead of its initial testing phase.
+          </p>
+        </div>
+
+        <div class="facts">
+          <div class="fact">
+            <strong>Company</strong>
+            Sylara Inc.
+          </div>
+          <div class="fact">
+            <strong>Product</strong>
+            Consumer wellness and habit-building platform
+          </div>
+          <div class="fact">
+            <strong>Status</strong>
+            MVP in development
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="status">
+      <div class="section-inner">
+        <div class="eyebrow" style="color:#fff;">In development</div>
+        <h2>We’re building the first version of Sylara.</h2>
+        <p>
+          Our MVP is currently under active development. This site will be updated as Sylara
+          progresses toward testing and launch.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-inner">
+        <div class="eyebrow">Contact</div>
+        <h2>Get in touch with Sylara.</h2>
+        <p>
+          For company, partnership or product inquiries, contact Sylara Inc. using our company email.
+        </p>
+        <a class="email" href="mailto:admin@sylaraapp.com">admin@sylaraapp.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Sylara Inc. &nbsp;·&nbsp; sylaraapp.com
+  </footer>
+
+</body>
+</html>
